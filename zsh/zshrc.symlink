@@ -22,3 +22,11 @@ compinit
 
 # load every completion after autocomplete loads
 for config_file ($ZSH/**/completion.sh) source $config_file
+
+function whatthehelldididoon() {
+    for repo in `find . -name '.hg'`
+    do
+        echo $repo
+        h .. -R $repo/.. -d "$1" -u 'Steve Losh'
+    done
+}

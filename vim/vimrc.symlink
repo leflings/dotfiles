@@ -47,15 +47,24 @@ set guioptions-=T
 set ruler
 set incsearch
 set history=800
-set undolevels=800
 set relativenumber
 set backspace=indent,eol,start
 set ignorecase
 set smartcase
 set scrolloff=5
-set backupdir=~/.vim_tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim_tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set title
+
+set undofile
+set undoreload=10000
+
+" Backups {{{
+
+set undodir=~/.vim/tmp/undo//     " undo files
+set backupdir=~/.vim/tmp/backup// " backups
+set directory=~/.vim/tmp/swap//   " swap files
+set backup                        " enable backups
+
+" }}}
 
 " Correct handling of long lines
 set wrap
@@ -90,6 +99,12 @@ vnoremap <tab> %
 
 set cul
 hi CursorLine term=none cterm=none ctermbg=3
+
+" Gundo usage
+nnoremap <F5> :GundoToggle<CR>
+
+" Map sparkup to Cmd-e
+let g:sparkupExecuteMapping = '<D-e>'
 
 " Strip all trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>

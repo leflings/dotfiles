@@ -26,7 +26,7 @@ map  :NERDTreeToggle<CR>
 " Set the colorscheme to whatever i prefer
 syntax on
 set background=dark
-colo mustang
+colo solarized
 
 
 " Easy window navigation
@@ -34,6 +34,9 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" Use space to go to command insertion
+nnoremap <Space> :
 
 
 " === Basic options
@@ -59,9 +62,9 @@ set undoreload=10000
 
 " Backups {{{
 
-set undodir=~/.vim/tmp/undo//     " undo files
-set backupdir=~/.vim/tmp/backup// " backups
-set directory=~/.vim/tmp/swap//   " swap files
+set undodir=~/.vim_tmp/undo//     " undo files
+set backupdir=~/.vim_tmp/backup// " backups
+set directory=~/.vim_tmp/swap//   " swap files
 set backup                        " enable backups
 
 " }}}
@@ -96,9 +99,15 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
+" command U GundoToggle
+
+nnoremap <leader>= yypVr=
+nnoremap <leader>- yypVr-
 
 set cul
 hi CursorLine term=none cterm=none ctermbg=3
+
+nmap <leader>R :RainbowParenthesesToggle<CR>
 
 " Gundo usage
 nnoremap <F5> :GundoToggle<CR>

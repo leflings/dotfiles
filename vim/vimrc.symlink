@@ -43,6 +43,8 @@ nnoremap <Space> :
 set hidden
 set tabstop=2
 set shiftwidth=2
+set expandtab " expands tabs to paces
+set softtabstop=2 " makes the backspaces key go back 2 spaces
 set autoindent
 set smartindent
 set showmatch
@@ -54,7 +56,7 @@ set relativenumber
 set backspace=indent,eol,start
 set ignorecase
 set smartcase
-set scrolloff=5
+set scrolloff=8
 set title
 
 set undofile

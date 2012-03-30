@@ -75,7 +75,7 @@ set backup                        " enable backups
 set wrap
 set textwidth=80
 set formatoptions=qrn1
-set colorcolumn=85
+" set colorcolumn=85
 
 " Make arrow keys behave like you would expect on long lines
 nnoremap j gj
@@ -141,3 +141,32 @@ nnoremap <leader>w <C-w>v<C-w>l
 
 " Hack to suppress some LustyJuggler warning
 let g:LustyJugglerSuppressRubyWarning = 1
+
+" From http://stackoverflow.com/questions/1313323/vim-write-back-my-file-on-each-key-press
+" For my latex build
+" Choose your own statusline here
+let g:pbstatusline="%F\ %y\ %l:%c\ %m"
+set statusline=%F\ %y\ %l:%c\ %m
+
+autocmd FileType tex setlocal autowriteall
+
+" Save the file every 5 keypresses
+autocmd FileType tex setlocal statusline=%!pb:WriteFileViaStatusLine()
+
+" Save the file every time this event fires.
+autocmd FileType tex :autocmd InsertLeave,CursorHold,CursorHoldI * call pb:WriteFileViaStatusLine("always")
+
+" 1 optional param: "always" is only allowed value.
+let s:writefilecounter = 0
+function! pb:WriteFileViaStatusLine(...)
+   if s:writefilecounter > 5 || (a:0 > 0 && a:1 == "always")
+      if &buftype == ""
+         write
+      endif
+      let s:writefilecounter = 0
+   else
+      let s:writefilecounter = s:writefilecounter + 1
+   endif
+
+   return g:pbstatusline
+endfunction

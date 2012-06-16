@@ -15,6 +15,9 @@ set nocompatible
 " change the mapleader form \ to ,
 let mapleader = ","
 
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+
 " Quickly edit/reload the vimrc file
 nnoremap <silent> <leader>ev :e $MYVIMRC<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
@@ -116,13 +119,13 @@ nnoremap <F5> :GundoToggle<CR>
 let g:sparkupExecuteMapping = '<D-e>'
 
 " Strip all trailing whitespace
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+" nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Using Ack
 nnoremap <leader>a :Ack
 
 " Fold HTML tag
-nnoremap <leader>ft Vatzf
+" nnoremap <leader>ft Vatzf
 
 " Sort CSS properties
 nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>

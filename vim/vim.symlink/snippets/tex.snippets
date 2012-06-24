@@ -104,6 +104,22 @@ snippet subp
 #Texttt
 snippet tt
 	\texttt{${1}}${2}
+#changemargin
+snippet cm
+	\begin{changemargin}{${1}}{${2}}
+		${3}
+	\end{changemargin}
+
+#figure
+snippet fig
+	\begin{figure}[h!]
+	%\begin{changemargin}{}{}
+		\centering
+		\includegraphics[scale=1]{${1}}
+		\caption{${2}}
+	%\end{changemargin}
+	\end{figure}
+	
 snippet itd
 	\item[${1:description}] ${2:item}
 snippet figure

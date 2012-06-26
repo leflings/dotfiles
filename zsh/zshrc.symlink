@@ -32,3 +32,5 @@ function whatthehelldididoon() {
     done
 }
 export PATH="/usr/local/share/python:${PATH}"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

@@ -60,7 +60,7 @@ set relativenumber
 set backspace=indent,eol,start
 set ignorecase
 set smartcase
-set scrolloff=8
+set scrolloff=999
 set title
 
 set undofile
@@ -84,6 +84,9 @@ set formatoptions=qrn1
 " Make arrow keys behave like you would expect on long lines
 nnoremap j gj
 nnoremap k gk
+" And make the reverse binding in case you need it for macros
+nnoremap gj j
+nnoremap gk k
 
 " File-type highlighting and configuration.
 " Run :filetype (without args) to see what you may have

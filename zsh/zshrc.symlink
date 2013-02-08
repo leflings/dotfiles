@@ -34,3 +34,7 @@ function whatthehelldididoon() {
 export PATH="/usr/local/share/python:${PATH}"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+__git_files () {
+  _wanted files expl 'local files' _files
+}

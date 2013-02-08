@@ -68,6 +68,18 @@ set smartcase
 set scrolloff=8
 set title
 
+" I want undo. And i want a lot of it
+set undofile
+set undoreload=1000
+
+" Backups {{{
+
+set undodir=~/.vim_tmp/undo//     " undo files
+set backupdir=~/.vim_tmp/backup// " backups
+set directory=~/.vim_tmp/swap//   " swap files
+set backup                        " enable backups
+
+" }}}
 
 " Correct handling of long lines
 set wrap

@@ -15,6 +15,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'godlygeek/tabular'
+Bundle 'python.vim'
 
 filetype plugin indent on
 
@@ -49,10 +50,10 @@ nnoremap <Space> :
 
 " === Basic options
 set hidden
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab " expands tabs to paces
-set softtabstop=2 " makes the backspaces key go back 2 spaces
+set softtabstop=4 " makes the backspaces key go back 2 spaces
 set autoindent
 set smartindent
 set showmatch
@@ -93,6 +94,10 @@ nnoremap k gk
 nnoremap gj j
 nnoremap gk k
 
+" Create a == or -- under the current line, with the width of that line
+nnoremap <leader>= yypVr=
+nnoremap <leader>- yypVr-
+
 " search options
 nnoremap / /\v
 vnoremap / /\v
@@ -122,3 +127,9 @@ nmap <Leader>bc :BundleClean<CR>
 "  Nerdtree
 " -------------
 map  :NERDTreeToggle<CR>
+
+" ---------------
+" Python bindings
+" ---------------
+
+command! R :! /Users/leflings/code/python/python_koans/python2/run.sh

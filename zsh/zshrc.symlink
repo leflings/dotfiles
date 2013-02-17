@@ -2,9 +2,9 @@
 export ZSH=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/code
+#export PROJECTS=~/code
 
-export JAVA_HOME=/Library/Home/Java
+#export JAVA_HOME=/Library/Home/Java
 
 
 # source every .zsh file in this rep
@@ -22,7 +22,7 @@ autoload -U compinit
 compinit
 
 # load every completion after autocomplete loads
-for config_file ($ZSH/**/completion.sh) source $config_file
+#for config_file ($ZSH/**/completion.sh) source $config_file
 
 function whatthehelldididoon() {
     for repo in `find . -name '.hg'`
@@ -31,7 +31,7 @@ function whatthehelldididoon() {
         h .. -R $repo/.. -d "$1" -u 'Steve Losh'
     done
 }
-export PATH="/usr/local/share/python:${PATH}"
+export PATH="${PATH}"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 

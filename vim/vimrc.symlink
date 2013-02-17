@@ -1,0 +1,118 @@
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My bundles here:
+Bundle 'mutewinter/vim-indent-guides'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'mileszs/ack.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'godlygeek/tabular'
+Bundle 'majutsushi/tagbar'
+
+filetype plugin indent on
+
+let mapleader=","
+
+syntax on
+set background=dark
+if has("gui_running")
+  colorscheme jellybeans
+else
+  colorscheme jellybeans
+endif
+
+" for Vim indent guides
+let g:indent_guides_enable_on_vim_startup=1
+
+" for tagbar.vim
+nmap <leader>t :TagbarToggle<CR>
+
+" for ctags in general
+set tagstack
+set tags=./tags,tags
+
+" Quickly edit/reload the vimrc file
+nnoremap <silent> <leader>ev :e $MYVIMRC<cr>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+
+" Easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Use space to go to command insertion
+nnoremap <Space> :
+
+" === Basic options
+set hidden
+set tabstop=2
+set shiftwidth=2
+set expandtab " expands tabs to paces
+set softtabstop=2 " makes the backspaces key go back 2 spaces
+set autoindent
+set smartindent
+set showmatch
+set guioptions-=T
+set ruler
+set incsearch
+set history=800
+"set relativenumber
+set number
+set backspace=indent,eol,start
+set ignorecase
+set smartcase
+set scrolloff=999
+set title
+
+
+" Correct handling of long lines
+set wrap
+set textwidth=80
+set formatoptions=qrn1
+
+" Make arrow keys behave like you would expect on long lines
+nnoremap j gj
+nnoremap k gk
+" And make the reverse binding in case you need it for macros
+nnoremap gj j
+nnoremap gk k
+
+" search options
+nnoremap / /\v
+vnoremap / /\v
+set ignorecase
+set smartcase
+set incsearch
+set showmatch
+set hlsearch
+nnoremap <leader><space> :noh<cr>
+
+" cursor line
+set cul
+"hi CursorLine term=none cterm=none ctermbg=3
+
+" Create vertical split and switch to it
+nnoremap <leader>w <C-w>v<C-w>l
+
+" ---------------
+" Vundle
+" ---------------
+nmap <Leader>bi :BundleInstall<CR>
+" Because this also updates
+nmap <Leader>bu :BundleInstall!<CR>
+nmap <Leader>bc :BundleClean<CR>
+
+" --------------
+"  Nerdtree
+" -------------
+map ¾ :NERDTreeToggle<CR>

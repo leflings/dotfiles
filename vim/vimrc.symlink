@@ -23,6 +23,7 @@ let mapleader=","
 
 syntax on
 set background=dark
+set t_Co=256
 if has("gui_running")
   colorscheme jellybeans
 else

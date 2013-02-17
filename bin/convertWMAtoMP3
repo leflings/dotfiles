@@ -1,2 +1,0 @@
-#!/bin/sh
-for f in *.wma; do ffmpeg -i "$f" -ab 320k "${f%.wav}.mp3" && rm "$f" ; done

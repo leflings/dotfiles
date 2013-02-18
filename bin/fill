@@ -6,4 +6,4 @@ RES_Y=`xdpyinfo | grep 'dimensions:' | cut -f 2 -d ':' | cut -c10-14`
 DOCK_SIZE=$((50))
 
 wmctrl -r $1 -b remove,maximized_vert,maximized_horz
-wmctrl -R $1 -e 0,0,0,$RES_X,$((RES_Y-DOCK_SIZE))
+wmctrl -R $1 -e 0,0,0,1440,850

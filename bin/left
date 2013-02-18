@@ -1,9 +1,10 @@
 #!/bin/sh
 #
 # reposition target window to left
-RES_X=`xdpyinfo | grep 'dimensions:' | cut -f 2 -d ':' | cut -c5-8`
-RES_Y=`xdpyinfo | grep 'dimensions:' | cut -f 2 -d ':' | cut -c10-14`
-DOCK_SIZE=$((50))
+# RES_X=`xdpyinfo | grep 'dimensions:' | cut -f 2 -d ':' | cut -c5-8`
+# RES_Y=`xdpyinfo | grep 'dimensions:' | cut -f 2 -d ':' | cut -c10-14`
+# DOCK_SIZE=$((50))
 
 wmctrl -r $1 -b remove,maximized_vert,maximized_horz
-wmctrl -R $1 -e 0,0,0,$((RES_X/2)),$((RES_Y-DOCK_SIZE))
+wmctrl -R $1 -e 0,0,0,720,850
+#wmctrl -R $1 -e 0,0,0,$((RES_X/2)),$((RES_Y-DOCK_SIZE))

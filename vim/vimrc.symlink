@@ -16,6 +16,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'godlygeek/tabular'
 Bundle 'python.vim'
+Bundle 'kien/ctrlp.vim'
 
 filetype plugin indent on
 
@@ -123,13 +124,18 @@ nmap <Leader>bi :BundleInstall<CR>
 nmap <Leader>bu :BundleInstall!<CR>
 nmap <Leader>bc :BundleClean<CR>
 
+" -----
+" CtrlP
+" -----
+:let g:ctrlp_map = '<Leader>t'
+:let g:ctrlp_match_window_bottom = 0
+:let g:ctrlp_match_window_reversed = 0
+:let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+:let g:ctrlp_working_path_mode = 0
+:let g:ctrlp_dotfiles = 0
+:let g:ctrlp_switch_buffer = 0
+
 " --------------
 "  Nerdtree
 " -------------
 map  :NERDTreeToggle<CR>
-
-" ---------------
-" Python bindings
-" ---------------
-
-command! R :! /Users/leflings/code/python/python_koans/python2/run.sh

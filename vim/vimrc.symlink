@@ -17,6 +17,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'godlygeek/tabular'
 Bundle 'python.vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/syntastic'
 
 filetype plugin indent on
 

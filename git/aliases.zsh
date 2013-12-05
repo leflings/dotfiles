@@ -20,7 +20,9 @@ fi
 alias gl='git pull --prune'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gp='git push origin HEAD'
-alias gd='git diff'
+#alias gd='git diff'
+alias gd='git log -p --diff-filter=M'
+alias gda='git log -p --diff-filter=AM'
 alias gc='git commit'
 alias gca='git commit -a'
 alias gco='git checkout'

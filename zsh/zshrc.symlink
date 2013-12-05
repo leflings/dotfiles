@@ -31,7 +31,6 @@ function whatthehelldididoon() {
         h .. -R $repo/.. -d "$1" -u 'Steve Losh'
     done
 }
-export PATH="/usr/local/share/python:${PATH}"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 

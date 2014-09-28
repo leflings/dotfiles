@@ -13,12 +13,20 @@ Bundle 'mutewinter/vim-indent-guides'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'mileszs/ack.vim'
-" Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdtree'
 Bundle 'godlygeek/tabular'
 Bundle 'kongo2002/fsharp-vim'
-Bundle 'python.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
+
+" JavaScript related
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'pangloss/vim-javascript'
+"Bundle 'Raimondi/delimitMate'
+"Bundle 'Valloric/YouCompleteMe'
+Bundle 'marijnh/tern_for_vim'
+
+
 " snipMate dependencies
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
@@ -147,9 +155,24 @@ nmap <Leader>bc :BundleClean<CR>
 :let g:ctrlp_switch_buffer = 0
 
 " --------------
+"  YouCompleteMe
+" -------------
+" These are the tweaks I apply to YCM's config, you don't need them but they might help.
+" YCM gives you popups and splits by default that some people might not like, so these should tidy it up a bit for you.
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+set completeopt-=preview
+
+" --------------
 "  Nerdtree
 " -------------
 map  :NERDTreeToggle<CR>
 
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "0.0"}
+
+" --------------
+"  For movement between options when ctrl-n is pressed
+" -------------
+inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))

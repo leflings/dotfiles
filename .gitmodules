@@ -1,0 +1,3 @@
+[submodule "vim/vim.symlink/bundle/fsharp"]
+	path = vim/vim.symlink/bundle/fsharp
+	url = git://github.com/kongo2002/fsharp-vim.git

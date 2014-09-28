@@ -1,9 +1,6 @@
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
-# your project folder that we can `c [tab]` to
-export PROJECTS=~/code
-
 export JAVA_HOME=/Library/Home/Java
 
 
@@ -32,8 +29,8 @@ function whatthehelldididoon() {
     done
 }
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 __git_files () {
   _wanted files expl 'local files' _files
 }
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
